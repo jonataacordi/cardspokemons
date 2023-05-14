@@ -1,0 +1,14 @@
+/*Seta os valores em todas as TAGs*/
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/*Seta os valores apenas na TAG ul */
+
+ul{
+    list-style: none;
+}
+
+

@@ -1,0 +1,154 @@
+/*Estilizando o seletor (body)*/
+body {
+    font-family: 'Poppins', sans-serif;
+    max-width: 1280px;
+    margin: 0 auto;
+    background-color: #5e5b5bad;
+    color: #333333;
+}
+
+/*Estilizando o nome das classes(modo-escuro) que será criada em JS e estará no seletor (body). Ele sobreecreve
+o body acima pois aqui na chamada da classe as especificação de seletor (body.modo-escuro) possui uma especificidade 
+maior(0,1,1) que o seletor do (body) sozinho(0,0,1), por isso que ele sobreescreve.*/
+body.modo-escuro {
+    background-color: #212121;
+    color: #f5f5f5;
+}
+
+/*Estilizando o button e img que é a logo(pokebola e sol)*/
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+}
+
+/*Como as regras são as mesmas para os elementos das duas classes podemos utilizar juntas, separando elas apenas pela vírgula.*/
+header .logo,
+header .imagem-botao {
+    width: 30px;
+    transition: 0.2s ease-in-out;
+}
+
+
+/*Para estilizar um id utilizamos o (#) depois seguimos as mesmas regras das classes.*/
+header #botao-alterar-tema {
+    background: none;
+    border: none;
+}
+
+/*Efeito hover sobre as logos para aumentar e diminuir de tamanho conforme passa o mouse sobre eles.*/
+header .logo:hover,
+header .imagem-botao:hover,
+main .cartao-pokemon:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/*Estilizando as listas das cartas*/
+main {
+    padding: 25px;
+}
+
+/*Aplicando o (flex) na lista de cards, onde que para isso precisamos aplicar no
+elemento pai(ul) do (main) para que as filhas herdem.*/
+main .listagem-pokemon {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+/*Estilizando o cartão*/
+main .cartao-pokemon {
+    background-color: #d8e3ec;
+    width: 200px;
+    padding: 15px;
+    /*Espaçamento da borda*/
+    display: flex;
+    /*Realiza o espaçamento de forma horizontal */
+    flex-direction: column;
+    /*Direcionamos em coluna*/
+    align-items: center;
+    /*Alinha os itens horizontalmente ao centro*/
+    gap: 15px;
+    border-radius: 15px;
+    transition: 0.2s ease-in-out;
+}
+
+/*Essa é uma regra específica para trocar o background somente para o cartão quando passar o mouse por cima.*/
+main .cartao-pokemon:hover {
+    background-color: #96d9d6;
+
+}
+
+/*Trocando o background do cartão quando for passado para o modo noturno, ou seja, clicado no ícone da lua.*/
+.modo-escuro .cartao-pokemon {
+    background-color: #a8a8a8;
+}
+
+/*Centralizando os nomes e números dentro do cartão para que caso o nome ex:(Bulbasaur) fique muito grande ou seja adicionado outros nomes ao lado, esses sejam
+inseridos abaixo um do outro de forma alinhada*/
+main .cartao-pokemon .informacoes {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #333333;
+    border-radius: 10px;
+}
+
+/*Estilizando a parte interna dos cartões.*/
+main .cartao-pokemon .informacoes span {
+    padding: 5px;
+    text-transform: uppercase;
+    font-size: 17px;
+}
+
+/*Padronizando o tamanho dos gifs*/
+main .cartao-pokemon .gif {
+    width: 70px;
+    height: 70px;
+}
+
+/*Iremos estilizar os tipos que é a parte externa do tipo(Grama, Veneno, fogo, água...)*/
+main .cartao-pokemon .tipos {
+    display: flex;
+    gap: 15px;
+}
+
+/*Agora iremos estilizar a parte interna o tipo(Grama, Veneno, fogo, água...)*/
+main .cartao-pokemon .tipo {
+    padding: 8px;
+    border-radius: 10px;
+}
+
+/*Defindo as cores para os background do tipo, ex: Grama, Veneno*/
+
+.grama {
+    background-color: #7ac74c;
+}
+
+.veneno {
+    background-color: #df67ddfb;
+}
+
+.fogo {
+    background-color: #ee8130;
+}
+
+.agua {
+    background-color: #6390f0;
+}
+
+.inseto {
+    background-color: #a6b91a;
+}
+
+/*Estilizando a descrição da carta, onde caso a descrição for maior que a caixa 
+será ocultado o restante da descrição a habilitado o botão de scroll na vertical(y)*/
+main .descricao {
+    max-height: 80px;
+    overflow-y: scroll;
+    font-size: 13px;
+    padding-right: 3px;
+}
+
+/*Adicionando os estilos da descrição*/
